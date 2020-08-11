@@ -1,0 +1,22 @@
+<div class="create-form">
+    <form>
+        <h2 class="text-center">Edit Product</h2>       
+        <div class="form-group">
+          <label>Product Name</label>
+           <input #nameInput class="input form-control" type="text" >
+        </div>
+        <div class="form-group">
+          <label>Product Description</label>
+            <input #descInput class="input form-control" type="text" >
+        </div>
+         <div class="form-group">
+          <label>Product Price</label>
+            <input #priceInput class="input form-control" type="text" >
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" (click)="updateProduct(nameInput.value,descInput.value,priceInput.value)">Update Product</button>
+        </div>
+             
+    </form>
+   
+</div>

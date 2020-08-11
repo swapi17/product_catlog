@@ -1,0 +1,38 @@
+<div class="product">
+<div class="container">
+	<div class="text-center">
+		<h2>Products</h2>
+    <h4>Category: {{categoryName}} </h4>
+		<hr>
+		<button class="btn btn-primary" [routerLink]="['/products/create']">Add New Product +</button>
+	</div>
+	<hr>
+</div>
+
+<div class="container">
+
+	<div class="row list" style="margin: 1em 0;">
+
+		<!-- START : Card -->
+		<div class="col-sm-12 col-md-6 col-lg-4 list__item" *ngFor="let product of products; let i = index;">
+			<div class="card mb-4 shadow-sm pd-5" >
+				<div class="card-body">
+					<h3>{{product.name}}</h3>
+          <h4 class="card-text">Category: {{product.category}}</h4>
+          <p class="card-text">CategoryID: 117</p>
+					<p class="card-text">{{product.description}}</p>
+          <h4>Price: $ {{product.price}}</h4>
+					<div class="btn-group text-center" role="group">
+						<button type="button" class="btn btn-success" [routerLink]="['/product',selectedCategoryId,'view',product._id]"><i class="fab fa-instagram fa-sm pr-2" aria-hidden="true"></i>
+    View</button>
+						<button type="button" class="btn btn-primary" [routerLink]="['/product',selectedCategoryId,'edit',product._id]"><i class="fab fa-twitter fa-sm pr-2" aria-hidden="true"></i>Edit</button>
+						<button type="button" class="btn btn-danger"><i class="fab fa-snapchat-ghost fa-sm pr-2" aria-hidden="true" (click)="deleteProduct(product._id)"></i>Delete</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END :  Card -->
+
+	</div>
+</div>
+</div>
